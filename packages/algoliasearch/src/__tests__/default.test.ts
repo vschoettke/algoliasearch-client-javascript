@@ -92,11 +92,6 @@ describe('default preset', () => {
       read: 46,
       write: 47,
     });
-    expect(customClient.initRecommendation().transporter.timeouts).toEqual({
-      connect: testing.isBrowser() ? 1 : 2,
-      read: testing.isBrowser() ? 2 : 5,
-      write: 30,
-    });
 
     expect(customClient.transporter.queryParameters).toEqual({
       queryParameter: 'bar',

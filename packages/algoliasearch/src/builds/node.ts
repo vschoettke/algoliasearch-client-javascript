@@ -185,7 +185,7 @@ export default function algoliasearch(
     apiKey,
     timeouts: {
       connect: 10,
-      read: 20,
+      read: 5,
       write: 30,
     },
     requester: createNodeHttpRequester(),

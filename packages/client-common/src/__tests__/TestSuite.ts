@@ -43,6 +43,13 @@ export class TestSuite {
   ) {
     let client = this.algoliasearch(`${process.env[appIdEnv]}`, `${process.env[apiKeyEnv]}`);
 
+    // @ts-ignore
+    client.transporter.timeouts = {
+      connect: 10,
+      read: 20,
+      write: 30,
+    };
+
     if (testing.isBrowserLite()) {
       // @ts-ignore
       client = addMethods(client, {
