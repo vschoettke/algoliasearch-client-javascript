@@ -29,8 +29,8 @@ export const createSearchClient: CreateClient<
     ] as readonly HostOptions[]).concat(
       shuffle([
         // { url: `${appId}-1.algolianet.com` },
-        // { url: `${appId}-2.algolianet.com` },
-        { url: `${appId}-3.algolianet.com` },
+        { url: `${appId}-2.algolianet.com` },
+        // { url: `${appId}-3.algolianet.com` },
       ])
     ),
     ...options,
