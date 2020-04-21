@@ -16,7 +16,7 @@ fi
 printf "\n${GREEN}You are about the start a release process${NC}\n"
 
 printf "\n${RED}[ACTION]${NC} Changes on changelog are not part of this release process.\n"
-read -p "is the changelog modified and commited separately? If yes, are you sure? (y/n): "
+read -p "Is the changelog modified and commited separately? If no, do that first manually. (y/n):"
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then exit 1; fi
 
 releaseBranch='master'
@@ -40,7 +40,7 @@ git fetch origin --tags
 
 currentVersion=`cat lerna.json | jq -r '.version'`
 
-printf "\n${RED}[ACTION]${NC} Checking CI status is an manual step! Check here: https://circleci.com/gh/algolia\n"
+printf "\n${RED}[ACTION]${NC} Checking CI status is an manual step! Check here: https://circleci.com/gh/algolia/algoliasearch-client-javascript\n"
 read -p "Is the latest commit a success? If yes, are you sure? (y/n): "
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then exit 1; fi
 
